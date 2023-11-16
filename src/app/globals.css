@@ -20,11 +20,11 @@
 
 @layer base {
   body {
-    @apply bg-white overflow-hidden leading-relaxed;
+    @apply bg-white leading-relaxed;
   }
 
   .page {
-    @apply w-full h-screen overflow-hidden;
+    @apply w-full h-screen;
   }
 
   .h1 {
@@ -50,32 +50,10 @@
 
   .input,
   .textarea {
-    @apply bg-transparent outline-none focus:ring-1 focus:ring-accent border border-white/20 placeholder:text-white/30 placeholder:font-light;
+    @apply bg-transparent outline-none focus:ring-1  border border-white/20 placeholder:text-white/30 placeholder:font-light;
   }
 
   .textarea {
     @apply w-full h-[180px] p-6 capitalize rounded-lg resize-none;
   }
-
-  /* width */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 3px #121212;
-  border-radius: 10px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #222222;
-  border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #121212;
-}
 }

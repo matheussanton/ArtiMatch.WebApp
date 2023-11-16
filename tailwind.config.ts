@@ -50,4 +50,7 @@ module.exports = {
       DEFAULT: "15px",
     },
   },
+  corePlugins: {
+    preflight: false,
+  },
 };

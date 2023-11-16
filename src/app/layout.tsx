@@ -2,8 +2,15 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
+//Chakra UI
+import { Providers } from "./providers";
+
 //Components
 import Nav from "./Components/Nav/Nav";
+import Footer from "./Components/Footer/Footer";
+
+//Contexts
+import ChoiceContext from "@/Contexts/Choice/ChoiceContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,11 +25,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Nav />
-        {children}
-      </body>
-    </html>
+    <ChoiceContext>
+      <html lang="en">
+        <body className={`${inter.className}`}>
+          <Providers>
+            <div className="page">
+              <Nav />
+              {children}
+              <Footer />
+            </div>
+          </Providers>
+        </body>
+      </html>
+    </ChoiceContext>
   );
 }
