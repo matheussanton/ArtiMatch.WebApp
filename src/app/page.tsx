@@ -104,30 +104,25 @@ export default function Home() {
         </div>
       </div>
 
-      {/* <div
-        className={`
-      ${choice.actualStep === 2 ? "flex" : "hidden"}
-      flex flex-col justify-evenly z-10 w-full font-mono text-2
-      transition-all duration-300`}
-      >
-        <InspirationGrid />
-
-        <Button
-          className="mt-5"
-          onClick={() => setIsImageLoading(!isImageLoading)}
-        >
-          toggle
-        </Button>
-      </div> */}
-
       {choice.actualStep === 2 &&
         <div
           className={`
-          ${choice.actualStep === 2 ? "flex" : "hidden"}
-          flex flex-col justify-evenly z-10 w-full font-mono text-2
+          z-10 w-full font-mono text-2
           transition-all duration-300`}
         >
           <InspirationGrid />
+
+            <div className="flex justify-center">
+              <Button
+                colorScheme="blue"
+                variant="solid"
+                size="md"
+                onClick={goToStepTwo}
+                width={20}
+                >
+                Next
+              </Button>
+            </div>
 
         </div>}
 
