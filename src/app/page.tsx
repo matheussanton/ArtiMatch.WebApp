@@ -13,6 +13,7 @@ import {
   BsLayoutTextWindow,
 } from "react-icons/bs";
 import { EServiceType } from "@/Contexts/Choice/ChoiceTypes";
+import InspirationGrid from "./Components/InspirationGrid/InspirationGrid";
 
 const services = [
   {
@@ -103,114 +104,13 @@ export default function Home() {
         </div>
       </div>
 
-      <div
+      {/* <div
         className={`
       ${choice.actualStep === 2 ? "flex" : "hidden"}
       flex flex-col justify-evenly z-10 w-full font-mono text-2
       transition-all duration-300`}
       >
-        <div className="flex items-center justify-center container">
-          <Grid
-            h="600px"
-            w="600px"
-            templateRows="repeat(3, 1fr)"
-            templateColumns="repeat(3, 1fr)"
-            gap={4}
-          >
-            <GridItem colSpan={1} bg="papayawhip">
-              <Skeleton
-                w="100%"
-                h="100%"
-                isLoaded={!isImageLoading}
-                fadeDuration={1}
-              >
-                Texto
-              </Skeleton>
-            </GridItem>
-            <GridItem colSpan={1} bg="papayawhip">
-              <Skeleton
-                w="100%"
-                h="100%"
-                isLoaded={!isImageLoading}
-                fadeDuration={1}
-              >
-                Texto
-              </Skeleton>
-            </GridItem>
-            <GridItem colSpan={1} bg="papayawhip">
-              <Skeleton
-                w="100%"
-                h="100%"
-                isLoaded={!isImageLoading}
-                fadeDuration={1}
-              >
-                Texto
-              </Skeleton>
-            </GridItem>
-
-            <GridItem colSpan={1} bg="papayawhip">
-              <Skeleton
-                w="100%"
-                h="100%"
-                isLoaded={!isImageLoading}
-                fadeDuration={1}
-              >
-                Texto
-              </Skeleton>
-            </GridItem>
-            <GridItem colSpan={1} bg="papayawhip">
-              <Skeleton
-                w="100%"
-                h="100%"
-                isLoaded={!isImageLoading}
-                fadeDuration={1}
-              >
-                Texto
-              </Skeleton>
-            </GridItem>
-            <GridItem colSpan={1} bg="papayawhip">
-              <Skeleton
-                w="100%"
-                h="100%"
-                isLoaded={!isImageLoading}
-                fadeDuration={1}
-              >
-                Texto
-              </Skeleton>
-            </GridItem>
-
-            <GridItem colSpan={1} bg="papayawhip">
-              <Skeleton
-                w="100%"
-                h="100%"
-                isLoaded={!isImageLoading}
-                fadeDuration={1}
-              >
-                Texto
-              </Skeleton>
-            </GridItem>
-            <GridItem colSpan={1} bg="papayawhip">
-              <Skeleton
-                w="100%"
-                h="100%"
-                isLoaded={!isImageLoading}
-                fadeDuration={1}
-              >
-                Texto
-              </Skeleton>
-            </GridItem>
-            <GridItem colSpan={1} bg="papayawhip">
-              <Skeleton
-                w="100%"
-                h="100%"
-                isLoaded={!isImageLoading}
-                fadeDuration={1}
-              >
-                Texto
-              </Skeleton>
-            </GridItem>
-          </Grid>
-        </div>
+        <InspirationGrid />
 
         <Button
           className="mt-5"
@@ -218,7 +118,19 @@ export default function Home() {
         >
           toggle
         </Button>
-      </div>
+      </div> */}
+
+      {choice.actualStep === 2 &&
+        <div
+          className={`
+          ${choice.actualStep === 2 ? "flex" : "hidden"}
+          flex flex-col justify-evenly z-10 w-full font-mono text-2
+          transition-all duration-300`}
+        >
+          <InspirationGrid />
+
+        </div>}
+
     </main>
   );
 
