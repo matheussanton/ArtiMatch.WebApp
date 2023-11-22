@@ -14,6 +14,7 @@ import {
 } from "react-icons/bs";
 import { EServiceType } from "@/Contexts/Choice/ChoiceTypes";
 import InspirationGrid from "./Components/InspirationGrid/InspirationGrid";
+import FreelancersGrid from "./Components/Freelancers/FreelancersGrid/FreelancersGrid";
 
 const services = [
   {
@@ -92,7 +93,15 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex justify-end w-full">
+        <div className="flex justify-between w-full">
+          <Button
+            className="border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white"
+            variant="solid"
+            size="md"
+          >
+            Voltar
+          </Button>
+
           <Button
             colorScheme="blue"
             variant="solid"
@@ -108,23 +117,39 @@ export default function Home() {
         <div
           className={`
           z-10 w-full font-mono text-2
+          flex flex-col justify-center items-center
           transition-all duration-300`}
         >
+          <h1 className="text-xl font-bold mb-5">Selecione as 3 melhores inspirações.</h1>
+
           <InspirationGrid />
 
-            <div className="flex justify-center">
-              <Button
-                colorScheme="blue"
-                variant="solid"
-                size="md"
-                onClick={goToStepTwo}
-                width={20}
-                >
-                Next
-              </Button>
-            </div>
+          <div className="grid gap-28 grid-cols-2 mt-8">
+            <Button
+              className="border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white"
+              variant="solid"
+              size="md"
+            >
+              Recarregar imagens
+            </Button>
+
+            <Button
+              colorScheme="blue"
+              variant="solid"
+              size="md"
+              onClick={goToStepThree}
+            >
+              Próximo passo
+            </Button>
+          </div>
 
         </div>}
+
+      {choice.actualStep === 3 &&
+        <div className="flex felx-row justify-center items-center">
+          <FreelancersGrid />
+        </div>
+      }
 
     </main>
   );
@@ -151,5 +176,9 @@ export default function Home() {
     }
 
     SetChoice({ ...choice, serviceDescription: description, actualStep: 2 });
+  }
+
+  function goToStepThree() {
+    SetChoice({ ...choice, actualStep: 3 });
   }
 }
