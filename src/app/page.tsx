@@ -19,19 +19,19 @@ import FreelancersGrid from "./Components/Freelancers/FreelancersGrid/Freelancer
 const services = [
   {
     icon: <BsBrushFill size="50px" />,
-    description: "Comming Soon",
+    description: "Em breve",
     disabled: true,
     serviceType: EServiceType.DIGITAL_ART,
   },
   {
     icon: <BsFillHouseGearFill size="50px" />,
-    description: "Home Interior",
+    description: "Design de Interiores",
     disabled: false,
     serviceType: EServiceType.HOME_INTERIOR,
   },
   {
     icon: <BsLayoutTextWindow size="50px" />,
-    description: "Comming Soon",
+    description: "Em breve",
     disabled: true,
     serviceType: EServiceType.WEB_DESIGN,
   },
@@ -95,7 +95,7 @@ export default function Home() {
 
         <div className="flex justify-between w-full">
           <Button
-            className="border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white"
+            className="border border-green-500 text-green-500 hover:bg-green-500 hover:text-white"
             variant="solid"
             size="md"
           >
@@ -103,12 +103,12 @@ export default function Home() {
           </Button>
 
           <Button
-            colorScheme="blue"
+            colorScheme="green"
             variant="solid"
             size="md"
             onClick={goToStepTwo}
           >
-            Next
+            Próximo
           </Button>
         </div>
       </div>
@@ -126,7 +126,7 @@ export default function Home() {
 
           <div className="grid gap-28 grid-cols-2 mt-8">
             <Button
-              className="border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white"
+              className="border border-green-500 text-green-500 hover:bg-green-500 hover:text-white"
               variant="solid"
               size="md"
             >
@@ -134,7 +134,7 @@ export default function Home() {
             </Button>
 
             <Button
-              colorScheme="blue"
+              colorScheme="green"
               variant="solid"
               size="md"
               onClick={goToStepThree}

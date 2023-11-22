@@ -5,29 +5,32 @@ const freelancers = [
     {
         id: 1,
         icon: "🚀",
-        name: "Matheus Santon",
+        name: "Kaike Gimenes",
         scorePercentage: 87,
         description: "Designer de interiores desde 2017, mais de 100 projetos realizados.",
+        price: 200
     },
     {
         id: 2,
         icon: "👩‍💻",
         name: "Ana Silva",
         scorePercentage: 92,
-        description: "Desenvolvedora web com experiência em front-end e back-end.",
+        description: "Arquiteta especializada em design de interiores, transformando espaços desde 2015. Concepção única e prática em mais de 80 projetos executados.",
+        price: 300
     },
     {
         id: 3,
         icon: "🎨",
         name: "Carlos Oliveira",
         scorePercentage: 78,
-        description: "Artista visual especializado em pintura a óleo, participou de diversas exposições.",
+        description: "Especialista em decoração residencial, trazendo elegância e funcionalidade para lares desde 2018. Mais de 60 residências transformadas com sucesso.",
+        price: 250
     }
 ];
 
 export default function FreelancersGrid() {
     return (
-        <div className="flex items-center justify-center w-full container">
+        <div className="flex items-center justify-center w-full container mt-10">
             <Grid
                 h="100%"
                 w="100%"

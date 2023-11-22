@@ -27,7 +27,7 @@ function StepperComponent() {
 
   return (
     <div className="">
-      <Stepper index={choice.actualStep}>
+      <Stepper index={choice.actualStep} colorScheme='green'>
         {steps.map((step, index) => (
           <Step key={index}>
             <StepIndicator className="transition-all duration-300">

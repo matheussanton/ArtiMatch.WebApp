@@ -9,17 +9,12 @@ export default function InspirationCard({ number }: any) {
 
     setTimeout(() => {
         setIsImageLoading(false);
-    }, Math.random() * 5000);
+    }, Math.random() * 15000);
 
-    function callLoading() {
-        setTimeout(() => {
-            setIsImageLoading(false);
-        }, Math.random() * 1000);
-    }
 
     return (
         <GridItem colSpan={1}
-            className="hover:cursor-pointer hover:border-blue-400 hover:border-2"
+            className="hover:cursor-pointer hover:border-green-500 hover:border-2"
             onClick={() => setSelected(!selected)}>
             <Skeleton
                 w="100%"
@@ -33,7 +28,7 @@ export default function InspirationCard({ number }: any) {
                     backgroundSize="cover"
                     backgroundRepeat="no-repeat">
                     <Box className={`absolute w-full h-full 
-                                ${selected && `bg-blue-400 bg-opacity-50`}
+                                ${selected && `bg-green-500 bg-opacity-50`}
                                 transition-all duration-100`} />
                 </Box>
             </Skeleton>

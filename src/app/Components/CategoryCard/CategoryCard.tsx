@@ -19,13 +19,14 @@ export default function CategoryCard({
                 ${
                   disabled
                     ? "opacity-50 "
-                    : "hover:shadow-lg hover:drop-shadow-lg hover:cursor-pointer hover:scale-105"
+                    : `hover:shadow-lg hover:drop-shadow-lg hover:cursor-pointer hover:scale-105
+                      hover:border-2 hover:border-green-500`
                 }
                 transition-all duration-300`}
     >
       <div className="flex flex-col items-center justify-evenly h-full container">
         <div className="flex items-center justify-center">
-          <p className="text-4xl font-bold text-center text-black">{icon}</p>
+          <p className="text-4xl font-bold text-center text-black hover:text-green-500">{icon}</p>
         </div>
         <div className="flex items-center justify-center">
           <p className="text-xl font-bold text-center text-black">
