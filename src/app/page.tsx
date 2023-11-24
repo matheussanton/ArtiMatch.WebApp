@@ -1,184 +1,49 @@
 "use client";
 
-import CategoryCard from "../app/Components/CategoryCard/CategoryCard";
-import StepperComponent from "../app/Components/Stepper/Stepper";
+import Link from "next/link";
+import Image from "next/image";
 
-import { useContext, useState } from "react";
-import { ChoiceContext } from "@/Contexts/Choice/ChoiceContext";
-import { Button, useToast, Grid, GridItem, Skeleton } from "@chakra-ui/react";
-
-import {
-  BsFillHouseGearFill,
-  BsBrushFill,
-  BsLayoutTextWindow,
-} from "react-icons/bs";
-import { EServiceType } from "@/Contexts/Choice/ChoiceTypes";
-import InspirationGrid from "./Components/InspirationGrid/InspirationGrid";
-import FreelancersGrid from "./Components/Freelancers/FreelancersGrid/FreelancersGrid";
-
-const services = [
-  {
-    icon: <BsBrushFill size="50px" />,
-    description: "Em breve",
-    disabled: true,
-    serviceType: EServiceType.DIGITAL_ART,
-  },
-  {
-    icon: <BsFillHouseGearFill size="50px" />,
-    description: "Design de Interiores",
-    disabled: false,
-    serviceType: EServiceType.HOME_INTERIOR,
-  },
-  {
-    icon: <BsLayoutTextWindow size="50px" />,
-    description: "Em breve",
-    disabled: true,
-    serviceType: EServiceType.WEB_DESIGN,
-  },
-];
 
 export default function Home() {
-  const { choice, SetChoice } = useContext(ChoiceContext)!;
-  const toast = useToast();
-
-  const [description, setDescription] = useState("");
-  const [isImageLoading, setIsImageLoading] = useState(true);
 
   return (
-    <main className="flex min-h-screen flex-col px-20 sm:px-40 py-24">
-      <div className="pb-12 overflow-x-auto">
-        <StepperComponent />
-      </div>
-
-      <div
-        className={`
-        ${choice.actualStep === 0 ? "flex" : "hidden"}
-        flex flex-wrap justify-evenly z-10 w-full font-mono text-2
-        transition-all duration-300`}
-      >
-        {services.map((service, index) => (
-          <CategoryCard
-            key={index}
-            icon={service.icon}
-            description={service.description}
-            disabled={service.disabled}
-            serviceType={service.serviceType}
-          />
-        ))}
-      </div>
-
-      <div
-        className={`
-        ${choice.actualStep === 1 ? "flex" : "hidden"}
-        flex flex-wrap justify-evenly z-10 w-full font-mono text-2
-        transition-all duration-300`}
-      >
-        <div className="flex flex-col justify-center items-center w-full mb-5">
-          <label htmlFor="description" className="mb-2">
-            Descreva com detalhes o ambiente que procura
-          </label>
-          <textarea
-            className="w-full  border-2 border-gray-300 rounded-md p-2"
-            name="description"
-            id="description"
-            cols={30}
-            rows={2}
-            maxLength={200}
-            onChange={onTextAreaChange}
-          ></textarea>
-          <div className="flex justify-end w-full">
-            <span className="text-gray-400 text-sm" id="description">
-              {description ? description.length : 0}/200
-            </span>
-          </div>
-        </div>
-
-        <div className="flex justify-between w-full">
-          <Button
-            className="border border-green-500 text-green-500 hover:bg-green-500 hover:text-white"
-            variant="solid"
-            size="md"
-          >
-            Voltar
-          </Button>
-
-          <Button
-            colorScheme="green"
-            variant="solid"
-            size="md"
-            onClick={goToStepTwo}
-          >
-            Próximo
-          </Button>
-        </div>
-      </div>
-
-      {choice.actualStep === 2 &&
+    <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
+      <div className="relative py-3 sm:max-w-xl sm:mx-auto">
         <div
-          className={`
-          z-10 w-full font-mono text-2
-          flex flex-col justify-center items-center
-          transition-all duration-300`}
-        >
-          <h1 className="text-xl font-bold mb-5">Selecione as 3 melhores inspirações.</h1>
-
-          <InspirationGrid />
-
-          <div className="grid gap-28 grid-cols-2 mt-8">
-            <Button
-              className="border border-green-500 text-green-500 hover:bg-green-500 hover:text-white"
-              variant="solid"
-              size="md"
-            >
-              Recarregar imagens
-            </Button>
-
-            <Button
-              colorScheme="green"
-              variant="solid"
-              size="md"
-              onClick={goToStepThree}
-            >
-              Próximo passo
-            </Button>
-          </div>
-
-        </div>}
-
-      {choice.actualStep === 3 &&
-        <div className="flex felx-row justify-center items-center">
-          <FreelancersGrid />
+          className="absolute inset-0 bg-gradient-to-r from-green-300 to-green-600 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl">
         </div>
-      }
+        <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
+          <div className="max-w-md mx-auto">
+            <div>
+              <Link href={"/"}>
+                <Image
+                  src="/logo.svg"
+                  width={248}
+                  height={54}
+                  alt=""
+                  priority={true}
+                ></Image>
+              </Link>
+            </div>
+            <div className="divide-y divide-gray-200">
+              <div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
+                <div className="relative">
+                  <input id="email" name="email" type="text" className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Usuário" />
+                  <label htmlFor="email" className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Usuário</label>
+                </div>
+                <div className="relative">
+                  <input id="password" name="password" type="password" className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Senha" />
+                  <label htmlFor="password" className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Senha</label>
+                </div>
+                <div className="relative">
+                  <button className="bg-green-500 text-white rounded-md px-2 py-1">Entrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
 
-    </main>
-  );
-
-  function onTextAreaChange() {
-    const textArea = document.getElementById(
-      "description"
-    ) as HTMLTextAreaElement;
-
-    setDescription(textArea.value);
-  }
-
-  function goToStepTwo() {
-    if (!description) {
-      toast({
-        title: "Descrição é obrigatória.",
-        description: "Por favor, descreva como deseja o serviço.",
-        status: "error",
-        duration: 4500,
-        isClosable: true,
-      });
-
-      return;
-    }
-
-    SetChoice({ ...choice, serviceDescription: description, actualStep: 2 });
-  }
-
-  function goToStepThree() {
-    SetChoice({ ...choice, actualStep: 3 });
-  }
 }

@@ -40,7 +40,7 @@ export default function FreelancersGrid() {
                 className="flex items-center justify-between container w-full"
             >
                 {freelancers.map(freelancer => (
-                    <FreelancerCard freelancer={freelancer} isMainChoice={isMainChoice(freelancer)} />
+                    <FreelancerCard freelancer={freelancer} isMainChoice={isMainChoice(freelancer)} key={freelancer.id} />
                 ))}
             </Grid>
         </div>

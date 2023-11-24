@@ -30,9 +30,10 @@ export default function RootLayout({
         <body className={`${inter.className}`}>
           <Providers>
             <div className="page">
-              <Nav />
+              {/* <Nav />
               {children}
-              <Footer />
+              <Footer /> */}
+              {children}
             </div>
           </Providers>
         </body>

@@ -14,7 +14,7 @@ export default function InspirationGrid() {
                 gap={4}
             >
                 {arrayOfIntegers.map(number => (
-                    <InspirationCard number={number}/>
+                    <InspirationCard number={number} key={number} />
                 ))}
             </Grid>
         </div>
