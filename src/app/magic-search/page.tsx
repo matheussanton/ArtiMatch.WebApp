@@ -37,7 +37,7 @@ const services = [
     },
 ];
 
-export default function Teste() {
+export default function MagicSearch() {
     const { choice, SetChoice } = useContext(ChoiceContext)!;
     const toast = useToast();
 
