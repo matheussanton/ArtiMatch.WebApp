@@ -10,7 +10,7 @@ import {LoadingContext} from "@/Contexts/Loading/LoadingContext";
 
 export default function Login() {
 
-  const { loading, setLoading } = useContext(LoadingContext)!;
+  const { setLoading } : any = useContext(LoadingContext);
   
   const toast = useToast();
   const router = useRouter();

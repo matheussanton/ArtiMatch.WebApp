@@ -1,7 +1,7 @@
 "use client";
 import { useState, createContext, useEffect } from "react";
 
-export const LoadingContext = createContext();
+export const LoadingContext = createContext({});
 
 function LoadingProvider({ children, showLoadingCallback }: any) {
 
